@@ -1,0 +1,50 @@
+# --- PLANTAS ---
+bd_plantas_raw:
+  type: polars.CSVDataset
+  filepath: data/01_raw/BD_plantas.csv
+  load_args:
+    separator: ";"
+    ignore_errors: true
+    encoding: "iso-8859-1"
+    decimal_comma: true
+
+bd_plantas_silver:
+  type: polars.EagerPolarsDataset
+  file_format: parquet
+  filepath: data/02_intermediate/bd_plantas_limpias.parquet
+
+# --- DESEMBARQUE ---
+bd_desembarque_raw:
+  type: polars.CSVDataset
+  filepath: data/01_raw/BD_desembarque.csv
+  load_args:
+    separator: ";"
+    ignore_errors: true
+    encoding: "iso-8859-1"
+    decimal_comma: true
+
+bd_desembarque_silver:
+  type: polars.EagerPolarsDataset
+  file_format: parquet
+  filepath: data/02_intermediate/bd_desembarque_limpio.parquet
+
+# --- MATERIA PRIMA PRODUCCION ---
+bd_materia_prima_raw:
+  type: polars.CSVDataset
+  filepath: data/01_raw/BD_materia_prima_produccion.csv
+  load_args:
+    separator: ";"
+    ignore_errors: true
+    encoding: "iso-8859-1"
+    decimal_comma: true
+
+bd_materia_prima_silver:
+  type: polars.EagerPolarsDataset
+  file_format: parquet
+  filepath: data/02_intermediate/bd_materia_prima_limpia.parquet
+
+# --- CAPA GOLD (TABLA MAESTRA) ---
+master_table_gold:
+  type: polars.EagerPolarsDataset
+  file_format: parquet
+  filepath: data/03_primary/master_table_sernapesca.parquet
