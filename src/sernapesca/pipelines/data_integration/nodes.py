@@ -6,7 +6,7 @@ def create_master_table(
     df_materia: pl.DataFrame # Asumimos que esta ya viene unida o la usamos para el contexto
 ) -> pl.DataFrame:
 
-    print("--- Capa Gold: Iniciando procesamiento con Over ---")
+    print("--- Capa Gold: Iniciando procesamiento---")
 
     # 1. Agregación externa (Sigue siendo necesaria porque viene de OTRA tabla)
     df_des_resumen = (

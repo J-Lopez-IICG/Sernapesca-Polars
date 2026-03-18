@@ -1,0 +1,8 @@
+services:
+  sernapesca-pipeline:
+    build: .
+    container_name: kedro_polars_container
+    volumes:
+      - .:/app  # Sincroniza TODO tu código y datos con el contenedor
+    # Esto permite que si ejecutas 'docker compose up', corra el pipeline
+    command: kedro run
