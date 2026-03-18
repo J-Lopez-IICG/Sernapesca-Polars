@@ -6,3 +6,5 @@ services:
       - .:/app  # Sincroniza TODO tu código y datos con el contenedor
     # Esto permite que si ejecutas 'docker compose up', corra el pipeline
     command: kedro run
+
+#docker compose run --rm -p 4141:4141 sernapesca-pipeline kedro viz run --host 0.0.0.0

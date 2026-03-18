@@ -5,3 +5,4 @@ kedro~=1.2.0
 polars
 kedro-datasets[polars.CSVDataSet, polars.ParquetDataSet]
 pyarrow
+kedro-viz
