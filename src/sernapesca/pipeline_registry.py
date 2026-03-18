@@ -18,7 +18,7 @@ def register_pipelines() -> Dict[str, Pipeline]:
 
     return {
         # Si corres "kedro run", suma los dos y los corre en orden
-        "__default__": data_transform_pipeline,
+        "__default__": data_transform_pipeline + data_integration_pipeline,
 
         # Si corres "kedro run --pipeline=data_transform"
         "data_transform": data_transform_pipeline,
